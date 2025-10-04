@@ -36,7 +36,7 @@ A modern, beautiful web application that helps you visualize your progress towar
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/progress-visualizer.git
+git clone https://github.com/aminmguidich/progress-visualizer.git
 cd progress-visualizer
 ```
 
