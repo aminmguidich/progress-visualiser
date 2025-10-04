@@ -2,6 +2,8 @@
 
 A modern, beautiful web application that helps you visualize your progress toward goals and provides AI-powered motivational insights using Google's Gemini API.
 
+![Progress Completion Visualizer Screenshot](visualise_prog.png)
+
 ![Progress Completion Visualizer](https://img.shields.io/badge/React-18.3.1-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue) ![Vite](https://img.shields.io/badge/Vite-5.4.2-purple) ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4.1-cyan)
 
 ## Features
