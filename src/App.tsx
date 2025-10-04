@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import { Calculator } from 'lucide-react';
 import PercentageCalculator from './components/PercentageCalculator';
 
 function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl">
+      <div className="w-full max-w-7xl">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-2xl mb-4 shadow-lg">
             <Calculator className="w-8 h-8 text-white" />

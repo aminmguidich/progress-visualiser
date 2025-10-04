@@ -7,7 +7,7 @@ interface AnalysisSectionProps {
 
 function AnalysisSection({ analysis, isAnalyzing }: AnalysisSectionProps) {
   return (
-    <div className="mt-6 p-6 bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl border-2 border-orange-200 shadow-lg">
+    <div className="w-full h-fit p-6 bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl border-2 border-orange-200 shadow-lg">
       <div className="flex items-center gap-2 mb-4">
         <Sparkles className="w-5 h-5 text-orange-600" />
         <h3 className="text-lg font-bold text-orange-800">

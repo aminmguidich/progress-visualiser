@@ -77,52 +77,56 @@ function PercentageCalculator() {
   };
 
   return (
-    <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-      <div className="p-8">
-        <CalculatorInput
-          numerator={numerator}
-          denominator={denominator}
-          onNumeratorChange={setNumerator}
-          onDenominatorChange={setDenominator}
-          onCalculate={calculatePercentage}
-          onKeyPress={handleKeyPress}
-        />
+    <div className={`transition-all duration-500 ${(analysis || isAnalyzing) ? 'grid grid-cols-1 lg:grid-cols-2 gap-8' : 'max-w-2xl mx-auto'}`}>
+      <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+        <div className="p-8">
+          <CalculatorInput
+            numerator={numerator}
+            denominator={denominator}
+            onNumeratorChange={setNumerator}
+            onDenominatorChange={setDenominator}
+            onCalculate={calculatePercentage}
+            onKeyPress={handleKeyPress}
+          />
 
-        {error && (
-          <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-xl">
-            <p className="text-red-600 text-sm font-medium text-center">{error}</p>
-          </div>
-        )}
+          {error && (
+            <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-xl">
+              <p className="text-red-600 text-sm font-medium text-center">{error}</p>
+            </div>
+          )}
 
-        {percentageCompleted !== null && percentageRemaining !== null && (
-          <>
-            <ProgressDisplay
-              percentageCompleted={percentageCompleted}
-              percentageRemaining={percentageRemaining}
-            />
-
-            <button
-              onClick={handleAnalyze}
-              disabled={isAnalyzing}
-              className="w-full mt-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-4 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-orange-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-            >
-              <TrendingUp className="w-5 h-5" />
-              {isAnalyzing ? (
-                <span>Analyzing Remaining Effort...</span>
-              ) : (
-                <span>Analyze Remaining Effort ({percentageRemaining.toFixed(2)}% Left)</span>
-              )}
-            </button>
-
-            {(analysis || isAnalyzing) && (
-              <AnalysisSection
-                analysis={analysis}
-                isAnalyzing={isAnalyzing}
+          {percentageCompleted !== null && percentageRemaining !== null && (
+            <>
+              <ProgressDisplay
+                percentageCompleted={percentageCompleted}
+                percentageRemaining={percentageRemaining}
               />
-            )}
-          </>
-        )}
+
+              <button
+                onClick={handleAnalyze}
+                disabled={isAnalyzing}
+                className="w-full mt-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-4 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-orange-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                <TrendingUp className="w-5 h-5" />
+                {isAnalyzing ? (
+                  <span>Analyzing Remaining Effort...</span>
+                ) : (
+                  <span>Analyze Remaining Effort ({percentageRemaining.toFixed(2)}% Left)</span>
+                )}
+              </button>
+            </>
+          )}
+        </div>
       </div>
+
+      {(analysis || isAnalyzing) && (
+        <div className="lg:flex lg:items-start">
+          <AnalysisSection
+            analysis={analysis}
+            isAnalyzing={isAnalyzing}
+          />
+        </div>
+      )}
     </div>
   );
 }
